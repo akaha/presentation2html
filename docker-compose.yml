@@ -1,0 +1,22 @@
+webserver:
+  build: ./apache
+  ports:
+    - 8080:80
+  volumes:
+    - ./apache/html/:/var/www/html
+    - ./apache/log/:/var/log/apache2
+    - ./output:/var/www/html/output
+  volumes_from:
+    - store
+
+pdf2svg:
+  build: ./pdf2svg
+  volumes:
+   - ./output:/output
+  volumes_from:
+    - store
+
+store:
+  image: ubuntu
+  volumes:
+    - /input
