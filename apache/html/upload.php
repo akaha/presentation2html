@@ -21,7 +21,8 @@ if ($uploadOk == 0) {
 // If everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["pdf"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["pdf"]["name"]). " has been uploaded. See <a href='output'>results</a>";
+        $dir = urlencode(explode(".", $_FILES["pdf"]["name"])[0]);
+        echo "The file ". basename( $_FILES["pdf"]["name"]). " has been uploaded. See <a href='slideshow.php?dir=" . htmlentities($dir) . "'>results</a>";
     } else {
         echo "Sorry, there was an error uploading your file " . $_FILES["pdf"]["tmp_name"] . " to " . $target_file;
     }
