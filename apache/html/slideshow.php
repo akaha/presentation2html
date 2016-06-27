@@ -5,12 +5,14 @@
     <style type="text/css">
         body {
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
+            background-position: center center;
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body onload="setBackground()">
-<script>
+    <script>
     function setBackground () {
         var slides = [],
             pos = 0,

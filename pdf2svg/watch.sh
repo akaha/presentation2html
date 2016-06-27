@@ -17,7 +17,6 @@ else
 				echo "pdf2svg failed with file $f"
 				mv $f "${f}_failed"
 				rm -rf /output/$fname
-				#exit 1
 			else
 				rm $f
 				echo "Converted $f"

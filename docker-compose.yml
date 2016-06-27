@@ -9,6 +9,13 @@ webserver:
   volumes_from:
     - store
 
+unoconv:
+  build: ./unoconv
+  volumes:
+   - ./output:/output
+  volumes_from:
+    - store
+
 pdf2svg:
   build: ./pdf2svg
   volumes:
