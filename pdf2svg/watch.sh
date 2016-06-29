@@ -12,7 +12,7 @@ else
 				rm -rf /output/$fname
 			fi
 			mkdir /output/$fname
-			pdf2svg /input/$filename /output/$fname/$fname%d.svg all
+			pdf2svg /input/$filename "/output/${fname}/${fname}_%d.svg" all
 			if [[ $? -ne 0 ]] ; then
 				echo "pdf2svg failed with file $f"
 				mv $f "${f}_failed"

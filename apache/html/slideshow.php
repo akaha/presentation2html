@@ -23,6 +23,7 @@
                 $dir = "output/" . urldecode($_GET["dir"]);
                 if (file_exists($dir)) {
                     $files = scandir($dir);
+                    sort($files, SORT_NATURAL);
 
                     for($x = 0; $x < count($files); $x++) {
                         echo "slides.push('" . $files[$x] . "');";
