@@ -12,10 +12,10 @@ if (file_exists($target_file)) {
 }
 
 // Allow certain file formats
-// if($fileType != "pdf" ) {
-//     echo "Sorry, only pdf files are allowed.". $fileType;
-//     $uploadOk = 0;
-// }
+if($fileType != "pdf" && $fileType != "ppt" && $fileType != "pptx" && $fileType != "odp") {
+    echo "Sorry, only pdf, ppt, pptx and odp files are allowed.". $fileType;
+    $uploadOk = 0;
+}
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
